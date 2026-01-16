@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../Auth/Auth.csproj" />
+  <Project Path="MyFirstApplication.csproj" />
+</Solution>

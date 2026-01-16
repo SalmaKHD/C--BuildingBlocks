@@ -1,0 +1,11 @@
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\bin\Debug\net10.0\Auth.deps.json
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\bin\Debug\net10.0\Auth.dll
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\bin\Debug\net10.0\Auth.pdb
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\Auth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\Auth.AssemblyInfoInputs.cache
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\Auth.AssemblyInfo.cs
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\Auth.csproj.CoreCompileInputs.cache
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\Auth.dll
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\refint\Auth.dll
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\Auth.pdb
+C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\Auth\obj\Debug\net10.0\ref\Auth.dll
