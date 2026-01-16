@@ -117,6 +117,9 @@ class Sample
         // create users using constructor
         User.createUsers();
 
+        customer1[0] = "444343344";
+        Console.WriteLine(customer1[0]);
+
     }
 }
 
@@ -139,6 +142,20 @@ internal sealed class Customer: User // default access modifier: internal
     private int age;
     public const string GroupName = "customers"; // constants are replaced with actual value at compile time, static members by default
     public readonly string dateOfPurchase; // cannot be modified
+    // create an array for demonstrating indexers
+    public string[] _orders = new string[] {"443434", "43434", "65656565"};
+
+    public string this[int index]
+    {
+        set
+        {
+            this._orders[index] = value;    
+        }
+        get
+        {
+            return this._orders[index]; 
+        }
+    }
 
     public Customer()
     {
