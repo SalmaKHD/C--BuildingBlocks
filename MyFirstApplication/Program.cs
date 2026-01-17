@@ -2,6 +2,7 @@
 using MyFirstApplication; // using a namespace 
 using static System.Console;
 using PartialClasses;
+using Authentication;
 
 class Sample
 {
@@ -154,6 +155,16 @@ class Sample
          * product info:
          * Product type is: Female
         */
+
+        // create a struct
+        Student student = new Student("salma", 22); // new keyword is dummy here
+        //student.name = null; // not possible to store null values
+        student.age = 21;
+        System.Console.WriteLine("student age is " + student.age);
+        /*
+         * output
+         * student age is 21
+         */
     }
 }
 
@@ -308,5 +319,21 @@ namespace Authentication // part of Auth namespace in User class
             set { _age = value; }
         }
 
+    }
+}
+
+namespace Authentication
+{
+    public struct Student
+    {
+        // has a parametter-less constructor by default
+        public string name;
+        public int age;
+
+        public Student(string name, int age)
+        {
+            this.name = name;
+            this.age = age; // all fields must be initialized in the constructor
+        }
     }
 }
