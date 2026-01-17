@@ -1,4 +1,4 @@
-﻿using Auth; // using directive for not having to use Auth. prefix every time
+﻿using Auth = Authentication; // using directive for not having to use Auth. prefix every time
 using MyFirstApplication; // using a namespace 
 
 class Sample
@@ -93,7 +93,7 @@ class Sample
         const int NUMBER = 12;
 
         // object creation
-        User user1 = new User();
+        Auth.User user1 = new Auth.User();
         // initialize fields
         user1._name = "Salma";
         user1.lastName = "Khodaei";
@@ -115,7 +115,7 @@ class Sample
         Types.typeConversions();
 
         // create users using constructor
-        User.createUsers();
+        Auth.User.createUsers();
 
         customer1[0] = "444343344";
         Console.WriteLine(customer1[0]);
@@ -129,7 +129,7 @@ class Sample
         customer1.getInfo();
 
         // polymorphism
-        JuniorCustomer juniorCustomer = new JuniorCustomerImpl();
+        Auth.JuniorCustomer juniorCustomer = new Auth.JuniorCustomerImpl();
         juniorCustomer.printAge();
         /*
          * output
@@ -137,7 +137,7 @@ class Sample
          */
 
         // polymorphism
-        SeniorCustomer seniorCustomer = new SeniorCustomerImpl();
+        Auth.SeniorCustomer seniorCustomer = new Auth.SeniorCustomerImpl();
         seniorCustomer.printInfo();
         /*
          * output
@@ -151,7 +151,7 @@ class Sample
 // modifier -> static, abstract, sealed, partial
 // public modifier -> useful for a class library only: because other projects may get access to it only
 // objects store data only -> not methods
-internal sealed class Customer: User // default access modifier: internal
+internal sealed class Customer: Auth.User // default access modifier: internal
 {
     // components
     // fields
@@ -216,7 +216,7 @@ internal sealed class Customer: User // default access modifier: internal
         System.Console.WriteLine("additional field values are: " + GetAge());
     }
 
-    static public void parameterKeywords(User defaultParameter, out int outParameter, ref User refParameter, in int inParameter, params string[] parameters)
+    static public void parameterKeywords(Auth.User defaultParameter, out int outParameter, ref Auth.User refParameter, in int inParameter, params string[] parameters)
     {
         outParameter = 4;
         refParameter._name = "Soheil";
@@ -256,7 +256,7 @@ internal sealed class Customer: User // default access modifier: internal
 //}
 
 // create an abstract class
-namespace Auth // part of Auth namespace in User class
+namespace Authentication // part of Auth namespace in User class
 {
     public abstract class JuniorCustomer : User
     {

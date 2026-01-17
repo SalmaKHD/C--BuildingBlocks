@@ -1,7 +1,7 @@
 ﻿using System.Formats.Asn1;
 using System.Runtime.InteropServices;
 
-namespace Auth
+namespace Authentication
 {
     public class User
     {
