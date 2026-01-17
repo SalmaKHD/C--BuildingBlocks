@@ -16,9 +16,15 @@ namespace PartialClasses
         }
 
         // if no implementation is found, definition is removed from the class by compiler
+        // private by default
         partial void getInfo()
         {
             System.Console.WriteLine("product info: ");
+        }
+
+        public void getProductInfo()
+        {
+            this.getInfo();
         }
     }
 

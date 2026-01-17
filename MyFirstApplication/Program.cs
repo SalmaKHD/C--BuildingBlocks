@@ -1,6 +1,7 @@
 ﻿using Auth = Authentication; // using directive for not having to use Auth. prefix every time
 using MyFirstApplication; // using a namespace 
 using static System.Console;
+using PartialClasses;
 
 class Sample
 {
@@ -144,6 +145,10 @@ class Sample
          * output
          * printing senior customer info:
          */
+
+        // partial class example
+        Product product = new Product();
+        product.getProductInfo();
     }
 }
 
