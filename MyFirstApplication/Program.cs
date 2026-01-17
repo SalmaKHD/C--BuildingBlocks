@@ -130,6 +130,10 @@ class Sample
 
         System.Console.ReadKey();
 
+        // polymorphism
+        JuniorCustomer juniorCustomer = new JuniorCustomerImpl();
+        juniorCustomer.printAge();
+
     }
 }
 
@@ -241,3 +245,19 @@ internal sealed class Customer: User // default access modifier: internal
 //{
 
 //}
+
+// create an abstract class
+public abstract class JuniorCustomer: User
+{
+    protected int age;
+
+    public abstract void printAge();
+}
+
+public class JuniorCustomerImpl: JuniorCustomer
+{
+    public override void printAge()
+    {
+        System.Console.WriteLine("Age is" + age);
+    }
+}
