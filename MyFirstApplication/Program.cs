@@ -306,6 +306,14 @@ namespace Authentication // part of Auth namespace in User class
         {
             System.Console.WriteLine("Age is" + age);
         }
+
+        // override equals virtual method
+        public override bool Equals(object? obj)
+        {
+            // cast to object and compare as needed
+            JuniorCustomer juniorCustomer = obj as JuniorCustomer;
+            return true; // just an example
+        }
     }
 
     // interface example
