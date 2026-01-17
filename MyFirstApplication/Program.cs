@@ -256,43 +256,46 @@ internal sealed class Customer: User // default access modifier: internal
 //}
 
 // create an abstract class
-public abstract class JuniorCustomer: User
+namespace Auth
 {
-    protected int age;
-
-    public abstract void printAge();
-}
-
-public class JuniorCustomerImpl: JuniorCustomer
-{
-    public override void printAge()
+    public abstract class JuniorCustomer : User
     {
-        System.Console.WriteLine("Age is" + age);
+        protected int age;
+
+        public abstract void printAge();
     }
-}
 
-// interface example
-public interface SeniorCustomer
-{
-    int Age { get; set; }
-
-    void printInfo(); // implementations must implement this, by default public and abstract
-}
-
-public class SeniorCustomerImpl: SeniorCustomer
-{
-    int _age;
-
-    public void printInfo()
+    public class JuniorCustomerImpl : JuniorCustomer
     {
-        System.Console.WriteLine("printing senior customer info: ");
+        public override void printAge()
+        {
+            System.Console.WriteLine("Age is" + age);
+        }
     }
 
+    // interface example
+    public interface SeniorCustomer
+    {
+        int Age { get; set; }
 
-    public int Age
-        { 
-        get { return _age; }
-        set { _age = value;  }
+        void printInfo(); // implementations must implement this, by default public and abstract
     }
-        
+
+    public class SeniorCustomerImpl : SeniorCustomer
+    {
+        int _age;
+
+        public void printInfo()
+        {
+            System.Console.WriteLine("printing senior customer info: ");
+        }
+
+
+        public int Age
+        {
+            get { return _age; }
+            set { _age = value; }
+        }
+
+    }
 }
