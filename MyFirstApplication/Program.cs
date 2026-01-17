@@ -167,7 +167,7 @@ class Sample
          */
 
         // alternate way to create a struct
-        Student student2;
+        Student student2;// no need for new keyword
         student2.age = 22;
         System.Console.WriteLine("student age is " + student2.age);
         /*
