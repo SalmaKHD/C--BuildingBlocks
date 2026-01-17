@@ -274,13 +274,25 @@ public class JuniorCustomerImpl: JuniorCustomer
 // interface example
 public interface SeniorCustomer
 {
+    int Age { get; set; }
+
     void printInfo(); // implementations must implement this, by default public and abstract
 }
 
 public class SeniorCustomerImpl: SeniorCustomer
 {
+    int _age;
+
     public void printInfo()
     {
         System.Console.WriteLine("printing senior customer info: ");
     }
+
+
+    public int Age
+        { 
+        get { return _age; }
+        set { _age = value;  }
+    }
+        
 }
