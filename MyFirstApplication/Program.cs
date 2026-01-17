@@ -128,12 +128,21 @@ class Sample
         // example of method overriding
         customer1.getInfo();
 
-        System.Console.ReadKey();
-
         // polymorphism
         JuniorCustomer juniorCustomer = new JuniorCustomerImpl();
         juniorCustomer.printAge();
+        /*
+         * output
+         * Age is0
+         */
 
+        // polymorphism
+        SeniorCustomer seniorCustomer = new SeniorCustomerImpl();
+        seniorCustomer.printInfo();
+        /*
+         * output
+         * printing senior customer info:
+         */
     }
 }
 
@@ -259,5 +268,19 @@ public class JuniorCustomerImpl: JuniorCustomer
     public override void printAge()
     {
         System.Console.WriteLine("Age is" + age);
+    }
+}
+
+// interface example
+public interface SeniorCustomer
+{
+    public void printInfo(); // implementations must implement this
+}
+
+public class SeniorCustomerImpl: SeniorCustomer
+{
+    public void printInfo()
+    {
+        System.Console.WriteLine("printing senior customer info: ");
     }
 }
