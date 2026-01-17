@@ -174,6 +174,10 @@ class Sample
          * output
          * student age is 22
          */
+
+        // sybyte is an alias for SByte struct
+        System.Console.WriteLine(sbyte.MinValue);
+        System.Console.WriteLine(SByte.MinValue);
     }
 }
 
