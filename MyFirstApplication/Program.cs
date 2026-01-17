@@ -274,7 +274,7 @@ public class JuniorCustomerImpl: JuniorCustomer
 // interface example
 public interface SeniorCustomer
 {
-    public void printInfo(); // implementations must implement this
+    void printInfo(); // implementations must implement this, by default public and abstract
 }
 
 public class SeniorCustomerImpl: SeniorCustomer
