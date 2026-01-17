@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="../Auth/Auth.csproj" />
+  <Project Path="../PartialClasses/PartialClasses.csproj" Id="049d86d6-1f86-4df7-a339-dc693e3271d8" />
   <Project Path="MyFirstApplication.csproj" />
 </Solution>
