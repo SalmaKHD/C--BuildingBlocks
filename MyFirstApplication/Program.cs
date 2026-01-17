@@ -138,7 +138,7 @@ class Sample
 // modifier -> static, abstract, sealed, partial
 // public modifier -> useful for a class library only: because other projects may get access to it only
 // objects store data only -> not methods
-internal class Customer: User // default access modifier: internal
+internal sealed class Customer: User // default access modifier: internal
 {
     // components
     // fields
@@ -197,7 +197,7 @@ internal class Customer: User // default access modifier: internal
     }
 
     // do method overriding
-    public override void getInfo()
+    public sealed override void getInfo() // child classes of Customer can't override this anymore
     {
         base.getInfo();
         System.Console.WriteLine("additional field values are: " + GetAge());
@@ -235,3 +235,9 @@ internal class Customer: User // default access modifier: internal
         }
     }
 }
+
+// not possible due to being sealed
+//class RegionalCustomer: Customer
+//{
+
+//}
