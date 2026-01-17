@@ -1,12 +1,13 @@
 ﻿using Auth = Authentication; // using directive for not having to use Auth. prefix every time
 using MyFirstApplication; // using a namespace 
+using static System.Console;
 
 class Sample
 {
     static void Main()
     {
         // part of System namespace
-        System.Console.WriteLine("Hello");
+        WriteLine("Hello"); // no namespace and class name needed anymore
         System.Console.ReadKey();
 
         // decalare a varibale 
