@@ -165,6 +165,15 @@ class Sample
          * output
          * student age is 21
          */
+
+        // alternate way to create a struct
+        Student student2;
+        student2.age = 22;
+        System.Console.WriteLine("student age is " + student2.age);
+        /*
+         * output
+         * student age is 22
+         */
     }
 }
 
