@@ -21,4 +21,11 @@ namespace PartialClasses
             System.Console.WriteLine("product info: ");
         }
     }
+
+    static class ProductConfig
+    {
+        // all memebrs must be static
+        const string TAG = "Product Log";
+        static string list = "white";
+    }
 }
