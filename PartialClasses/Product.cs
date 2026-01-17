@@ -19,7 +19,7 @@ namespace PartialClasses
         // private by default
         partial void getInfo()
         {
-            System.Console.WriteLine("product info: ");
+            System.Console.WriteLine("product info: \nProduct type is: " + ProductTypes.Female);
         }
 
         public void getProductInfo()
@@ -33,5 +33,11 @@ namespace PartialClasses
         // all memebrs must be static
         const string TAG = "Product Log";
         static string list = "white";
+    }
+
+    public enum ProductTypes: short // may be any numerical value
+    {
+        Male= 100, // changing the default value
+        Female = 101
     }
 }

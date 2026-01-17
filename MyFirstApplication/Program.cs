@@ -149,6 +149,11 @@ class Sample
         // partial class example
         Product product = new Product();
         product.getProductInfo();
+        /*
+         * output
+         * product info:
+         * Product type is: Female
+        */
     }
 }
 
