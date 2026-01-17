@@ -1,4 +1,5 @@
 ﻿using System.Formats.Asn1;
+using System.Runtime.InteropServices;
 
 namespace Auth
 {
@@ -38,6 +39,16 @@ namespace Auth
         {
             this.Name = name; // using property to initialize
             this.lastName = lastName;
+        }
+
+        public void printHeight()
+        {
+            System.Console.WriteLine("this person's height is: " + Height);
+        }
+
+        public virtual void getInfo()
+        {
+            System.Console.WriteLine("all field values are: " + Height + " " + Name);
         }
 
         // define a static constructor

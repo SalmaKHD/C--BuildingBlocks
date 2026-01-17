@@ -123,6 +123,11 @@ class Sample
         // read a field that has been modified with base
         System.Console.WriteLine(customer1.email);
 
+        // example of method hiding
+        customer1.printHeight();
+        // example of method overriding
+        customer1.getInfo();
+
         System.Console.ReadKey();
 
     }
@@ -133,7 +138,7 @@ class Sample
 // modifier -> static, abstract, sealed, partial
 // public modifier -> useful for a class library only: because other projects may get access to it only
 // objects store data only -> not methods
-internal sealed class Customer: User // default access modifier: internal
+internal class Customer: User // default access modifier: internal
 {
     // components
     // fields
@@ -183,6 +188,19 @@ internal sealed class Customer: User // default access modifier: internal
     public ref int getAgeRef()
     {
         return ref age; // returns a reference to age variable
+    }
+
+    // do method hiding
+    public new void printHeight()
+    {
+        System.Console.WriteLine("This person's height is: " + Height);
+    }
+
+    // do method overriding
+    public override void getInfo()
+    {
+        base.getInfo();
+        System.Console.WriteLine("additional field values are: " + GetAge());
     }
 
     static public void parameterKeywords(User defaultParameter, out int outParameter, ref User refParameter, in int inParameter, params string[] parameters)
