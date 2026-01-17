@@ -1,6 +1,6 @@
 /MyFirstApplication/.vs
 /.vs
-/Auth/obj/*
-/Auth/bin/*
-/MyFirstApplication/obj/*
-/MyFirstApplication/bin/*
+/Auth/obj
+/Auth/bin
+/MyFirstApplication/obj
+/MyFirstApplication/bin
