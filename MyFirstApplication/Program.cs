@@ -1,4 +1,4 @@
-﻿using Auth;
+﻿using Auth; // using directive for not having to use Auth. prefix every time
 using MyFirstApplication; // using a namespace 
 
 class Sample
@@ -256,7 +256,7 @@ internal sealed class Customer: User // default access modifier: internal
 //}
 
 // create an abstract class
-namespace Auth
+namespace Auth // part of Auth namespace in User class
 {
     public abstract class JuniorCustomer : User
     {
