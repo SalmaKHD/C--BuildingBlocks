@@ -345,4 +345,17 @@ namespace Authentication
             this.age = age; // all fields must be initialized in the constructor
         }
     }
+
+    // readonly struct
+    public readonly struct Teacher
+    {
+        public readonly string name;
+        public readonly int age;
+
+        public Teacher(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+    }
 }
