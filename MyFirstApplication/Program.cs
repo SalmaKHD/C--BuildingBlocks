@@ -120,6 +120,11 @@ class Sample
         customer1[0] = "444343344";
         Console.WriteLine(customer1[0]);
 
+        // read a field that has been modified with base
+        System.Console.WriteLine(customer1.email);
+
+        System.Console.ReadKey();
+
     }
 }
 
@@ -157,9 +162,10 @@ internal sealed class Customer: User // default access modifier: internal
         }
     }
 
-    public Customer()
+    public Customer(): base()
     {
-        member = "dddd";
+        // acces base members
+        base.email = "Salma@gmail.com";
     }
 
     // age setter
