@@ -12,6 +12,7 @@ namespace Authentication
         public string password;
         protected internal string member;
         private static string tag;
+        public AccessLevel accessLevel = AccessLevel.Guest;
 
         // define a property for _name
         public string Name
@@ -79,6 +80,13 @@ namespace Authentication
             AnyUser<LinuxUser<string>> anyUser = new AnyUser<LinuxUser<string>>(linuxUser);
             System.Console.WriteLine(anyUser.User);
 
+        }
+
+        public enum AccessLevel
+        {
+            Admin,
+            Guest,
+            User
         }
     }
 
