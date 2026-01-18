@@ -80,6 +80,13 @@ namespace Authentication
             AnyUser<LinuxUser<string>> anyUser = new AnyUser<LinuxUser<string>>(linuxUser);
             System.Console.WriteLine(anyUser.User);
 
+            // example of is operator
+           User linuxUser2 = new LinuxUser<string>("member");
+
+            if (linuxUser2 is LinuxUser<string> lUser2)
+            {
+                System.Console.WriteLine(lUser2.Member);
+            }
         }
 
         public enum AccessLevel

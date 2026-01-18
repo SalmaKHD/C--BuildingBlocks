@@ -185,6 +185,7 @@ class Sample
             Soheil Khodaei soheil@outlook.com
             Member is: member
             Authentication.LinuxUser`1[System.String]
+            member
          */
 
         // add nullable struct example
@@ -308,6 +309,7 @@ internal sealed class Customer: Auth.User // default access modifier: internal
                 System.Console.WriteLine(members[i]);
             }
         }
+
     }
 }
 
