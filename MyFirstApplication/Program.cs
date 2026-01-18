@@ -186,6 +186,25 @@ class Sample
             Member is: member
             Authentication.LinuxUser`1[System.String]
          */
+
+        // add nullable struct example
+        int? c = null; // not nullabe by default
+        customer1 = null; // nullable by default
+        c = 4;
+        if(c.HasValue)
+        {
+            System.Console.WriteLine("nullable struct value is " + c.Value);
+        }
+        // use default value
+        c = null;
+        System.Console.WriteLine("c with default value is: " + (c ?? 0));
+        c?.ToString(); // access member only if not null
+        System.Console.WriteLine(customer1);
+        /*
+         * output
+         * nullable struct value is 4
+         * c with default value is: 0
+         */
     }
 }
 
