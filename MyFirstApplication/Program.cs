@@ -214,6 +214,17 @@ class Sample
          * output
          * customer3 type is Customer
          */
+
+        // dynamic type variable example
+        dynamic x;
+        x = "string-value";
+        x = 4;
+        x = 4.5;
+        System.Console.WriteLine("x final value is " + x);
+        /*
+         * output
+         * x final value is 4.5
+         */
     }
 }
 
