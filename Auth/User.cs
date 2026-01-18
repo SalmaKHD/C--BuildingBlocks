@@ -101,6 +101,8 @@ namespace Authentication
     public class LinuxUser<T> : User
     {
         private T _member;
+        private Os os;
+
         public T Member
         {
             get { return _member; }
@@ -110,6 +112,19 @@ namespace Authentication
         public LinuxUser(T member)
         {
             Member = member;
+            // example of inner class usage
+            os = new Os();
+            os.Name = "Linux";
+        }
+
+        private class Os
+        { // inner class
+            private string _name;
+            public string Name
+            {
+                get { return _name; }
+                set { _name = value; }
+            }
         }
     }
 
