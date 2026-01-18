@@ -206,6 +206,14 @@ class Sample
          * nullable struct value is 4
          * c with default value is: 0
          */
+
+        // implicitely inferred type
+        var customer3 = new Customer();
+        System.Console.WriteLine("customer3 type is " + customer3);
+        /*
+         * output
+         * customer3 type is Customer
+         */
     }
 }
 
