@@ -1,4 +1,5 @@
 ﻿using System.Formats.Asn1;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace Authentication
@@ -17,7 +18,7 @@ namespace Authentication
         {
             // if we don't define either, the property becomes read-only or write-only
             get { return _name; }
-            set { if(value.Length > 0) { _name = value; } }
+            set { if (value.Length > 0) { _name = value; } }
         }
 
         // create an auto set and get property -> will be defined implicitely
@@ -72,15 +73,44 @@ namespace Authentication
 
             System.Console.WriteLine(user2._name + " " + user2.lastName + " " + user2.email);
 
+            LinuxUser<string> linuxUser = new LinuxUser<string>("member");
+            System.Console.WriteLine("Member is: " + linuxUser.Member);
+
+            AnyUser<LinuxUser<string>> anyUser = new AnyUser<LinuxUser<string>>(linuxUser);
+            System.Console.WriteLine(anyUser.User);
+
         }
     }
 
 
-    public class LinuxUser: User
+    public class LinuxUser<T> : User
     {
-        public LinuxUser()
+        private T _member;
+        public T Member
         {
-            member = "something";
+            get { return _member; }
+            set { _member = value; }
+        }
+
+        public LinuxUser(T member)
+        {
+            Member = member;
+        }
+    }
+
+    public class AnyUser<T> where T : User
+    {
+        private T _user;
+
+        public T User
+        {
+            get { return _user; }
+            set { _user = value; }
+        }
+
+        public AnyUser(T user)
+        {
+            User = user;
         }
     }
 }

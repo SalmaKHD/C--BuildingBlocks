@@ -117,9 +117,6 @@ class Sample
         // type conversions
         Types.typeConversions();
 
-        // create users using constructor
-        Auth.User.createUsers();
-
         customer1[0] = "444343344";
         Console.WriteLine(customer1[0]);
 
@@ -178,6 +175,17 @@ class Sample
         // sybyte is an alias for SByte struct
         System.Console.WriteLine(sbyte.MinValue);
         System.Console.WriteLine(SByte.MinValue);
+
+        // work with generic types
+        // create users using constructor
+        Auth.User.createUsers();
+        /*
+         * output
+         * Salma Khodaei
+            Soheil Khodaei soheil@outlook.com
+            Member is: member
+            Authentication.LinuxUser`1[System.String]
+         */
     }
 }
 
