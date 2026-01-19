@@ -225,6 +225,12 @@ class Sample
          * output
          * x final value is 4.5
          */
+
+        // create an anonymous function
+        //delegate (int a, int b)
+        //{
+        //    System.Console.WriteLine(a + b);
+        //};
     }
 }
 
