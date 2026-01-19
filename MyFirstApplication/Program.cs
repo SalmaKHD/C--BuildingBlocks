@@ -227,10 +227,16 @@ class Sample
          */
 
         // create an anonymous function
-        //delegate (int a, int b)
-        //{
-        //    System.Console.WriteLine(a + b);
-        //};
+        var delegateMethod = delegate (int a, int b)
+        {
+            System.Console.WriteLine(a + b);
+        };
+
+        // create a lambda function
+        var lambdaFunction = (int a, int b) =>
+        {
+            System.Console.WriteLine(a + b);
+        };
     }
 }
 
