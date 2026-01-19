@@ -241,6 +241,8 @@ class Sample
 
         // inline lambda expression
         var lambdaFunction2 = (int a, int b) => a + b; // type is Func
+
+        Predicate<int> lambdaFunction3 = (int a) => true; // predicate function type, one parameter and boolean return value
     }
 }
 
