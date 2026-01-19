@@ -234,13 +234,13 @@ class Sample
         };
 
         // create a lambda function
-        var lambdaFunction = (int a, int b) =>
+        var lambdaFunction = (int a, int b) => // type is Action
         {
             System.Console.WriteLine(a + b);
         };
 
         // inline lambda expression
-        var lambdaFunction2 = (int a, int b) => System.Console.WriteLine(a + b);
+        var lambdaFunction2 = (int a, int b) => a + b; // type is Func
     }
 }
 
