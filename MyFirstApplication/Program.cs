@@ -226,6 +226,7 @@ class Sample
          * x final value is 4.5
          */
 
+        // may be added to 
         // create an anonymous function
         var delegateMethod = delegate (int a, int b)
         {
@@ -237,6 +238,9 @@ class Sample
         {
             System.Console.WriteLine(a + b);
         };
+
+        // inline lambda expression
+        var lambdaFunction2 = (int a, int b) => System.Console.WriteLine(a + b);
     }
 }
 
