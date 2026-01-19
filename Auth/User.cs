@@ -91,6 +91,19 @@ namespace Authentication
             {
                 System.Console.WriteLine(lUser2.Member);
             }
+
+            // demostrate sing Dispose interface
+            workWithOs();
+            /*
+             * output
+             * shutting down OS
+             */
+        }
+
+        private static void workWithOs()
+        {
+            using LinuxUser<string> user = new LinuxUser<string>("member"); // new syntax
+            // Dispose automatically called at the end
         }
 
         public enum AccessLevel
@@ -102,7 +115,7 @@ namespace Authentication
     }
 
 
-    public class LinuxUser<T> : User
+    public class LinuxUser<T> : User, System.IDisposable
     {
         private T _member;
         private Os os;
@@ -130,6 +143,12 @@ namespace Authentication
                 set { _name = value; }
             }
         }
+
+        void IDisposable.Dispose()
+        {
+            System.Console.WriteLine("shutting down OS");
+        }
+        
     }
 
     public class AnyUser<T> where T : User
