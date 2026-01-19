@@ -60,6 +60,10 @@ namespace Authentication
             System.Console.WriteLine("tag value is: " + tag);
         }
 
+        ~User() {
+            System.Console.WriteLine("executed when object is being garbage collected");
+        }
+
         public static void createUsers()
         {
             // create users using constructor
