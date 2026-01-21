@@ -282,14 +282,11 @@ internal sealed class Customer: Auth.User // default access modifier: internal
 
     public string this[int index]
     {
-        set
-        {
-            this._orders[index] = value;    
-        }
-        get
-        {
-            return this._orders[index]; 
-        }
+        // convert to expression-bodied method
+        set => this._orders[index] = value;
+
+        // convert to expression-bodied method
+        get => this._orders[index];
     }
 
     public Customer(): base()
@@ -310,10 +307,8 @@ internal sealed class Customer: Auth.User // default access modifier: internal
         return this.age;
     }
 
-    public ref int getAgeRef()
-    {
-        return ref age; // returns a reference to age variable
-    }
+    // convert to expression-bodied method
+    public ref int getAgeRef() => ref age; // returns a reference to age variable
 
     // do method hiding
     public new void printHeight()
