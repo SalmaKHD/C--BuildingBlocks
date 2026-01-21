@@ -4,6 +4,7 @@ using static System.Console;
 using PartialClasses;
 using Authentication;
 using System.Linq.Expressions;
+using System.ComponentModel.Design;
 
 class Sample
 {
@@ -254,6 +255,21 @@ class Sample
         /*
          * output
          * result value is 16
+         */
+
+        int age = 15;
+        // add switch expression example
+        string ageGroup = age switch
+        {
+            < 6 => "Child",
+            < 19 => "Teenager",
+            < 50 => "Adult",
+            _ => "Senior"
+        };
+        System.Console.WriteLine("Age group of this person is: " + ageGroup);
+        /*
+         * output
+         * Age group of this person is: Teenager
          */
     }
 }
