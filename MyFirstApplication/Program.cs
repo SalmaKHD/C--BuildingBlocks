@@ -3,6 +3,7 @@ using MyFirstApplication; // using a namespace
 using static System.Console;
 using PartialClasses;
 using Authentication;
+using System.Linq.Expressions;
 
 class Sample
 {
@@ -243,6 +244,17 @@ class Sample
         var lambdaFunction2 = (int a, int b) => a + b; // type is Func
 
         Predicate<int> lambdaFunction3 = (int a) => true; // predicate function type, one parameter and boolean return value
+
+        // create an expression
+        Expression <Func<int, int>> expression = a => a * a;
+        Func<int, int> expressionDelegate = expression.Compile(); // compile expression and make ready for execution
+        // invoke expression
+        int result = expressionDelegate.Invoke(4);
+        System.Console.WriteLine("result value is " + result);
+        /*
+         * output
+         * result value is 16
+         */
     }
 }
 
