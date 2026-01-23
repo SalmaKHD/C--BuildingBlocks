@@ -318,6 +318,42 @@ class Sample
          * My name is Salma
          */
 
+        // datetime usage
+        DateTime dateTime = DateTime.Parse("2000-12-30");
+        System.Console.WriteLine("date time is: " + dateTime);
+        dateTime = DateTime.Now;
+        // different display formats
+        System.Console.WriteLine("date time is: " + dateTime);
+        System.Console.WriteLine("date time is: " + dateTime.ToShortDateString());
+        System.Console.WriteLine("date time is: " + dateTime.ToLongDateString());
+        System.Console.WriteLine("date time is: " + dateTime.ToShortTimeString());
+        System.Console.WriteLine("date time is: " + dateTime.ToLongTimeString());
+        System.Console.WriteLine("date time is: " + DateTime.ParseExact("2020-12-01", "yyyy-MM-dd", 
+            System.Globalization.CultureInfo.InvariantCulture,
+            System.Globalization.DateTimeStyles.None));
+        /*
+         * output
+            date time is: 12/30/2000 12:00:00 AM
+            date time is: 1/23/2026 4:44:04 AM
+            date time is: 1/23/2026
+            date time is: Friday, January 23, 2026
+            date time is: 4:44 AM
+            date time is: 4:44:04 AM
+            date time is: 12/1/2020 12:00:00 AM
+         */
+        
+        // date time operations
+        if(dateTime < DateTime.Now)
+        {
+            System.Console.WriteLine($"It's been {(DateTime.Now - dateTime).TotalDays} days since then");
+        }
+
+        System.Console.WriteLine($"It will be {DateTime.Now.AddDays(10)} in 10 days");
+        /*
+         * output
+         * It's been 7.261226851851852E-08 days since then
+            It will be 2/2/2026 4:51:22 AM in 10 days
+         */
 
 
     }
