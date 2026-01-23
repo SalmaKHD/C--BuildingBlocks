@@ -402,6 +402,24 @@ namespace MyFirstApplication
              * The value of this number is: 2
              */
 
+            // 8. tuple -> generic
+            (string name, int age, string email) person = getPerson();
+            System.Console.WriteLine("This person's name is " + person.name + ", and her age is: " + person.age);
+            // deconstruction, discard last field by using an _
+            (string name, int age, _) = getPerson(); // name and age are local variables now
+            System.Console.WriteLine("This person's name is " + name + ", and her age is: " + age);
+            /*
+             * output
+             * This person's name is Salma, and her age is: 24
+                This person's name is Salma, and her age is: 24
+             */
+
+
+        }
+
+        public static (string name, int age, string email) getPerson()
+        {
+            return ("Salma", 24, "salma@gmail.com");
         }
 
         // if we had to do deep copy, this is how we would go about it
