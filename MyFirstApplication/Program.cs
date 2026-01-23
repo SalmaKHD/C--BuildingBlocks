@@ -271,6 +271,9 @@ class Sample
          * output
          * Age group of this person is: Teenager
          */
+
+        // illustrate array usage
+        Collections.workWithArrays();
     }
 }
 
