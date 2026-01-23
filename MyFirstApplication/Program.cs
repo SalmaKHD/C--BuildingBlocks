@@ -355,6 +355,22 @@ class Sample
             It will be 2/2/2026 4:51:22 AM in 10 days
          */
 
+        // number systems
+        var binaryNumber = 0b1100100;
+        var octalNumber = Convert.ToString(binaryNumber, 8); // no literals for Octal numbers
+        var hexadecimalNumber = 0x64;
+        string unicodeString = "\u0543";
+        System.Console.WriteLine(binaryNumber);
+        System.Console.WriteLine(octalNumber);
+        System.Console.WriteLine(hexadecimalNumber);
+        System.Console.WriteLine(unicodeString);
+        /*
+         * output
+         * 100
+            144
+            100
+            ?
+         */
 
     }
 }
