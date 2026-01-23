@@ -5,6 +5,7 @@ using PartialClasses;
 using Authentication;
 using System.Linq.Expressions;
 using System.ComponentModel.Design;
+using System.Text;
 
 class Sample
 {
@@ -293,6 +294,28 @@ class Sample
          * This person's name is Salma, and her age is: 24
          * This person's name is Salma, and her age is: 24
             This person's name is Melika, and her age is: 32
+         */
+
+
+        // work with strings
+        string name = "Salma"; // immutable by default
+        if(!string.IsNullOrEmpty(name))
+            // formatted string
+            System.Console.WriteLine($"first char is {name[0]}");
+        /*
+         * output
+         * first char is S
+         */
+
+        // string builder
+        StringBuilder sentence = new StringBuilder(); // we may specify the initial capacity
+        sentence.Append("My name");
+        sentence.Append(" is"); // appended rather than creating a new string
+        sentence.Append(" Salma");
+        System.Console.WriteLine(sentence);
+        /*
+         * output
+         * My name is Salma
          */
 
 

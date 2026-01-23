@@ -414,6 +414,61 @@ namespace MyFirstApplication
                 This person's name is Salma, and her age is: 24
              */
 
+            //Linq
+            var result = numbersList.Where(number => number > 0);
+            foreach(var number in result)
+            {
+                printNumber(number);
+            }
+            result = numbersList.OrderBy(number => number).ThenBy(number => number); // to sort by more than one properties
+            foreach (var number in result)
+            {
+                printNumber(number);
+            }
+            // retrieve first element matching a condition
+            int firstOccurance = numbersList.FirstOrDefault(number => number == -10); // returns null by default if nothing is found
+            System.Console.WriteLine("the value found is " + firstOccurance);
+            // retrieve last occurance
+            int lastOccuarance = numbersList.LastOrDefault(number => number == 2);
+            System.Console.WriteLine("the value found is " + lastOccuarance);
+
+            // retrieve a value at a specific index
+            printNumber(numbersList.ElementAtOrDefault(0));
+
+            // retrieve a unique matching element -> exception is thrown otherwise
+            printNumber(numbersList.SingleOrDefault(Number => Number == 1));
+
+            // do mapping
+            result = numbersList.Select(number => number * number);
+            foreach (var number in result)
+            {
+                printNumber(number);
+            }
+
+            // aggregate functions
+            int minOfNumbers = numbersList.Min(number => number);
+            int maxOfNumbers = numbersList.Max(number => number);
+            int sumOfNumbers = numbersList.Sum(number => number);
+            double avgofNumbers = numbersList.Average(number => number);
+            int numbersCount = numbersList.Count();
+            System.Console.WriteLine("min is " + minOfNumbers + " max is " + maxOfNumbers + " sum is " + sumOfNumbers + " avg is " + avgofNumbers + " count is " + numbersCount);
+            /*
+             * output
+             * The value of this number is: 3
+            The value of this number is: 2
+            The value of this number is: 1
+            The value of this number is: 1
+            The value of this number is: 2
+            The value of this number is: 3
+            the value found is 0
+            the value found is 2
+            The value of this number is: 3
+            The value of this number is: 1
+            The value of this number is: 9
+            The value of this number is: 4
+            The value of this number is: 1
+            min is 1 max is 3 sum is 6 avg is 2 count is 3
+             */
 
         }
 
