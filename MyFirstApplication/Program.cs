@@ -274,6 +274,29 @@ class Sample
 
         // illustrate array usage
         Collections.workWithArrays();
+
+        // anonymous type example
+        var person = new { PersonName = "Salma", PersonAge = 24 };
+        System.Console.WriteLine("This person's name is " + person.PersonName + ", and her age is: " + person.PersonAge);
+        // anonymous type array
+        var people = new[]
+        {
+            new { Name = "Salma", Age = 24 }, // all fields' names and types must match and be the same for all memebrs
+            new { Name = "Melika", Age = 32 }
+        };
+        foreach(var localPerson in people)
+        {
+            System.Console.WriteLine("This person's name is " + localPerson.Name + ", and her age is: " + localPerson.Age);
+        }
+        /*
+         * output
+         * This person's name is Salma, and her age is: 24
+         * This person's name is Salma, and her age is: 24
+            This person's name is Melika, and her age is: 32
+         */
+
+
+
     }
 }
 
