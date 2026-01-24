@@ -372,6 +372,9 @@ class Sample
             ?
          */
 
+        // working with files
+        Files.workWithFiles();
+
     }
 }
 
