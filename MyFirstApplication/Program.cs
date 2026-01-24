@@ -1,4 +1,5 @@
-﻿using Auth = Authentication; // using directive for not having to use Auth. prefix every time
+﻿global using System;
+using Auth = Authentication; // using directive for not having to use Auth. prefix every time
 using MyFirstApplication; // using a namespace 
 using static System.Console;
 using PartialClasses;
@@ -7,13 +8,29 @@ using System.Linq.Expressions;
 using System.ComponentModel.Design;
 using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.CompilerServices;
 
 // add top-level statements
-System.Console.WriteLine("There can be top-level statements in one file in the rntire solution space only"); // -> put automatically in a class called static Program
+System.Console.WriteLine("There can be top-level statements in one file in the entire solution space only"); // -> put automatically in a class called static Program
+/*
+ * output
+ * There can be top-level statements in one file in the entire solution space only
+ */
 
 class Sample
 {
-    static void Main()
+    [ModuleInitializer]
+    internal static void initialize1()
+    {
+        Util.printValue("executed once the class is loaded");
+        /*
+         * output
+         * executed once the class is loaded
+         */
+        Main();
+    }
+
+    static void Main() // we may add string[] args for receipving cl arguments
     {
         // part of System namespace
         WriteLine("Hello"); // no namespace and class name needed anymore
@@ -143,8 +160,8 @@ class Sample
          * Age is0
          */
 
-        // polymorphism
-        Auth.SeniorCustomer seniorCustomer = new Auth.SeniorCustomerImpl();
+// polymorphism
+Auth.SeniorCustomer seniorCustomer = new Auth.SeniorCustomerImpl();
         seniorCustomer.printInfo();
         /*
          * output
@@ -407,7 +424,38 @@ class Sample
             executes anyway
          */
 
+        // create a nullable reference
+        User? user2 = null;
+        User user3 = new(); // new new() operator only, no need for specifyig object type name also, target-typed new expression
+        Util.printValue($"{user2?.Name ?? "user has no name!"}");
+        /*
+         * output
+         * user has no name!
+         */
 
+        // pattern matching
+        LinuxUser<string> user4 = new("anything");
+        user4.Name = "Salma";
+        string info = user4 switch
+        {
+            LinuxUser<string> lu when lu.Name is "Salma" => "This linux user is Salma",
+            _ => "This user is unknown"
+        };
+        Util.printValue($"info about this user is {info}");
+        /*
+         * output
+         * info about this user is This linux user is Salma
+         */
+
+        // todo: add init only properties
+        // todo: add readonly structure: all fields must be readonly
+        // todo: create record => just like data class in kotlin -> add a mutable peroperty also -> acts exactly like data class
+        // todo: create a record object with wit
+        // h keyword
+        // todo: create a default constructor for a record
+        // create a sealed method for a record also
+        // add static anonymous function example
+        // add lamdbda expression with return type exmple
 
 
     }
