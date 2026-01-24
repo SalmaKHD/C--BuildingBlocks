@@ -8,6 +8,9 @@ using System.ComponentModel.Design;
 using System.Text;
 using System.Runtime.Serialization.Formatters.Binary;
 
+// add top-level statements
+System.Console.WriteLine("There can be top-level statements in one file in the rntire solution space only"); // -> put automatically in a class called static Program
+
 class Sample
 {
     static void Main()
