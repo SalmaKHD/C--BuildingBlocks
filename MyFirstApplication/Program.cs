@@ -6,6 +6,7 @@ using Authentication;
 using System.Linq.Expressions;
 using System.ComponentModel.Design;
 using System.Text;
+using System.Runtime.Serialization.Formatters.Binary;
 
 class Sample
 {
@@ -374,6 +375,37 @@ class Sample
 
         // working with files
         Files.workWithFiles();
+
+        // exception handling
+        try
+        {
+            System.Console.WriteLine("result of dividing by zero");
+            throw new DivideByZeroException("exception", new ArgumentException("invalid argument supplied")); // inner exception: root cause or higher level exception behind this exception 
+
+        } catch(DivideByZeroException e) when(true) // we may add a certain condition, catch block will execute only if condition is true, called exception filters
+        {
+            Util.printValue(e.Message);
+            Util.printValue(e.StackTrace);
+            if(e.InnerException != null)
+            {
+                Util.printValue(e.InnerException.Message);
+
+            }
+        } finally
+        {
+            Util.printValue("executes anyway");
+        }
+        /*
+         * output
+         * result of dividing by zero
+            exception
+               at Sample.Main() in C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Languages\C#\LanguageBlocks\MyFirstApplication\Program.cs:line 383
+            invalid argument supplied
+            executes anyway
+         */
+
+
+
 
     }
 }
