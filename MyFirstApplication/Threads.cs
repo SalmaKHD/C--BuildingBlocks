@@ -80,6 +80,9 @@ namespace MyFirstApplication
                 // heavy code to execute
             });
 
+            // for canceling a task
+            CancellationTokenSource ct = new CancellationTokenSource();
+
             // alternative method for starting a task
             Task<int> task2 = Task.Factory.StartNew(() => {
                 // heavy code
@@ -87,7 +90,7 @@ namespace MyFirstApplication
                 // add a 2 sec delay to task
                 Task.Delay(2000);
                 return 10; // return a value after completion
-            });
+            }, ct.Token);
 
             // continue with another task once the task is complete
             task2.ContinueWith((antecedent) =>
@@ -109,6 +112,13 @@ namespace MyFirstApplication
             Task.WaitAll(task, task2);
             // wait for completion of any task
             Task.WaitAny(task, task2);
+
+            // cancel task
+            ct.Cancel();
+
+
+            
+
 
             // 
 
