@@ -114,7 +114,7 @@ namespace MyFirstApplication
             Task.WaitAny(task, task2);
 
             // cancel task
-            ct.Cancel();
+            ct.Cancel(); // task must be associated with a task in order to work for the task
 
 
             
