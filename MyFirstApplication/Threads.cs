@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MyFirstApplication
@@ -69,6 +71,56 @@ namespace MyFirstApplication
                 cdEvent.Signal(); // decreases countdown by 1
             cdEvent.Wait(); // wait until count down becomes 0
             cdEvent.Reset(); // resets countdown to initial count
+
+            // tasks
+
+            // executed automatically
+            Task task = Task.Run(() =>
+            {
+                // heavy code to execute
+            });
+
+            // alternative method for starting a task
+            Task<int> task2 = Task.Factory.StartNew(() => {
+                // heavy code
+                // more options available than Run()
+                // add a 2 sec delay to task
+                Task.Delay(2000);
+                return 10; // return a value after completion
+            });
+
+            // continue with another task once the task is complete
+            task2.ContinueWith((antecedent) =>
+            {
+                if(task2.Status == TaskStatus.RanToCompletion)
+                {
+                   Util.printValue(task2.Result);
+                } else
+                {
+                    Util.printValue(task2.Exception?.InnerExceptions.First().Message);
+                }
+            });
+
+            // get result of task2
+            Util.printValue(task2.Result);
+            // wait for a task
+            task.Wait();
+            // wait for more than one task
+            Task.WaitAll(task, task2);
+            // wait for completion of any task
+            Task.WaitAny(task, task2);
+
+            // 
+
+            // create a stopwatch
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            stopwatch.Stop();
+            Util.printValue(stopwatch.ElapsedMilliseconds);
+            /**
+             * output
+             * 
+             */
+
         }
     }
 }
