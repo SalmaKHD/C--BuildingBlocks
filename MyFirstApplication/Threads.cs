@@ -116,9 +116,14 @@ namespace MyFirstApplication
             // cancel task
             ct.Cancel(); // task must be associated with a task in order to work for the task
 
+            // use library methods that return a task
+            StreamWriter streamWriter = new StreamWriter("file-path");
+            Task task3 = streamWriter.WriteAsync("");
+            streamWriter.Close();
+            task3.Wait(); // blocks the thread until task is complete
 
-            
-
+            // solution: async await
+            // await writeToFile("file-path");
 
             // 
 
@@ -131,6 +136,14 @@ namespace MyFirstApplication
              * 
              */
 
+        }
+
+        private async Task writeToFile(string filePath)
+        {
+            // use library methods that return a task
+            StreamWriter streamWriter = new StreamWriter("file-path");
+             await streamWriter.WriteAsync("");
+            streamWriter.Close();
         }
     }
 }
